@@ -1,21 +1,111 @@
-2|Gaping Dragon
-3|Bell Gargoyles
-4|Priscilla
-5|Sif
-6|Pinwheel
-7|Nito
-9|Chaos Witch Quelaag
-10|Bed of Chaos
-11|Iron Golem
-12|Ornstein & Smough
-13|4 Kings
-14|Seath
-15|Gwyn
-1000|Solaire at first position
-1004|Solaire is hostile
-1005|Solaire is dead
-11010100|Undead Burg ladder kicked
-11010621|Sunlight Altar gate open
+2|Dead, Gaping Dragon
+3|Dead, Bell Gargoyles
+4|Dead, Priscilla
+5|Dead, Sif
+6|Dead, Pinwheel
+7|Dead, Nito
+9|Dead, Chaos Witch Quelaag
+10|Dead, Bed of Chaos
+11|Dead, Iron Golem
+12|Dead, Ornstein & Smough
+13|Dead, 4 Kings
+14|Dead, Seath
+15|Dead, Gwyn
+16|Dead, Asylum Demon
+250|Obtained, Weapon Smithbox
+251|Obtained, Armor Smithbox
+252|Obtained, Repairbox
+780|Obtained, Titanite Shard
+781|Obtained, Large Titanite Shard
+782|Obtained, Green Titanite Shard
+783|Obtained, Titanite Chunk
+784|Obtained, Blue Titanite Chunk
+785|Obtained, White Titanite Chunk
+786|Obtained, Red Titanite Chunk
+787|Obtained, Titanite Slab
+788|Obtained, Blue Titanite Slab
+789|Obtained, White Titanite Slab
+790|Obtained, Red Titanite Slab
+791|Obtained, Dragon Scale
+792|Obtained, Demon Titanite
+793|Obtained, Twinkling Titanite
+1000|Solaire, At First Position
+1001|Solaire, First Encounter Completed
+1004|Solaire, Hostile
+1005|Solaire, Dead
+1033|Darkmoon Knightess, Hostile
+1034|Darkmoon Knightess, Dead
+1062|Oscar, Dead (Hollow)
+1073|Oscar, Dead
+1091|Big Hat Logan, Rescued
+1096|Big Hat Logan, Hostile
+1097|Big Hat Logan, Dead
+1111|Griggs, Rescue Completed
+1114|Griggs, Hostile
+1115|Griggs, Dead
+1171|Reah, At Firelink
+1176|Reah, Hostile
+1177|Reah, Dead
+1197|Petrus, Hostile
+1198|Petrus, Dead
+1211|Vince, At Firelink
+1213|Vince, Hostile
+1214|Vince, Dead
+1221|Nico, At Firelink
+1223|Nico, Hostile
+1224|Nico, Dead
+1241|Gwyndolin, Disapproves
+1251|Laurentius, Rescue Completed
+1253|Laurentius, Hostile
+1254|Laurentius, Dead
+1256|Laurentius, Informed of Quelana
+1257|Laurentius, Hollow In Blighttown
+1272|Fair Lady, Dead
+1294|Quelana, Hostile
+1295|Quelana, Dead
+1321|Andre, Hostile
+1322|Andre, Dead
+1341|Vamos, Hostile
+1342|Vamos, Dead
+1361|Giant Blacksmith, Hostile
+1362|Giant Blacksmith, Dead
+1401|Undead Merchant, Hostile
+1402|Undead Merchant, Dead
+1411|Female Undead Merchant, Hostile
+1421|Crestfallen Merchant, Hostile
+1422|Crestfallen Merchant, Dead
+1434|Domhnall, Hostile
+1435|Domhnall, Dead
+1461|Crestfallen Warrior, Hostile
+1462|Crestfallen Warrior, Dead
+1464|Crestfallen Warrior, Hollow in New Londo
+1512|Siegmeyer, Hostile
+1513|Siegmeyer, Dead
+1571|Lautrec, Rescue Completed
+1574|Lautrec, Hostile
+1575|Lautrec, Dead
+1603|Shiva, Hostile
+1604|Shiva, Dead
+1627|Patches, Hostile
+1628|Patches, Dead
+1647|Frampt, Disapproves and Leaves
+1701|Oswald, Hostile
+1702|Oswald, Dead
+1711|Alvina, Disapproves and Leaves
+1763|Shiva's Bodyguard, Hostile
+1764|Shiva's Bodyguard, Dead
+1821|Gough, Not Present
+1841|Chester, Hostile
+1842|Chester, Dead
+1872|Elizabeth, Dead
+11010100|Undead Burg, Shortcut Ladder
+11010160|Undead Burg, Shortcut Door to Lower Burg
+11010172|Undead Burg, Basement Key Door
+11010191|Undead Burg, Watchtower upper door
+11010192|Undead Burg, Watchtower lower door
+11010621|Undead Burg, Sunlight Altar gate open
+11010863|Dead, Undead Parish, Berenike Knight
+11010865|Dead, Undead Parish, Channeler
 11010901|Taurus Demon
 11010902|Capra Demon
 11020302|Firelink Shrine elevator
@@ -29,8 +119,12 @@
 11410901|Centipede Demon
 11510900|Gwyndolin
 11510272|Dark Anor Londo
-11600100|New Londo Drained
+11600100|New Londo, Drained
+11600201|New Londo, Firelink Shrine Elevator Lowered
+11600650|New Londo, Estoc-carrying Corpse Collapsed
+11810090|Undead Asylum, Pre-Oscar Fog Gate
 11810103|Undead Asylum, Cell Door
 11810112|Undead Asylum, Boss Door
 11810105|Undead Asylum, Lower Oscar Door
 11810106|Undead Asylum, Upper Oscar Door
+11810211|Undead Asylum, Trap Sprung Near Oscar

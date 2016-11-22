@@ -231,7 +231,7 @@ Partial Class Form1
         Me.lblVer.Name = "lblVer"
         Me.lblVer.Size = New System.Drawing.Size(76, 13)
         Me.lblVer.TabIndex = 11
-        Me.lblVer.Text = "2016.11.21.21"
+        Me.lblVer.Text = "2016.11.21.22"
         '
         'btnUpdate
         '

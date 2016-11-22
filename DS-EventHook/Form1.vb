@@ -550,16 +550,26 @@ Public Class Form1
     Private sub initHooks()
 
         rlsHooks.Add("geteventflagvalue", New IntPtr(&HD60340))
-
         rlsHooks.Add("hook1", New IntPtr(&HBC1CEA))
         rlsHooks.Add("hook1return", New IntPtr(&HBC1CEF))
         rlsHooks.Add("hook1seteventflag", New IntPtr(&HD38CB0))
         rlsHooks.Add("hook2", New IntPtr(&H528CD5))
         rlsHooks.Add("hook2return", New IntPtr(&H528CDA))
         rlsHooks.Add("hook2seteventflag", New IntPtr(&HBBEEB0))
-
         rlsHooks.Add("seteventflag", New IntPtr(&HD60190))
-        rlsHooks.Add("seteventflagvalue", New IntPtr(&HD60360))
+
+
+        dbgHooks.Add("geteventflagvalue", New IntPtr(&HD618D0))
+        dbgHooks.Add("hook1", New IntPtr(&HBC23CA))
+        dbgHooks.Add("hook1return", New IntPtr(&HBC23CF))
+        dbgHooks.Add("hook1seteventflag", New IntPtr(&HD3A240))
+        dbgHooks.Add("hook2", New IntPtr(&H5294E5))
+        dbgHooks.Add("hook2return", New IntPtr(&H5294EA))
+        dbgHooks.Add("hook2seteventflag", New IntPtr(&HBBF590))
+        dbgHooks.Add("seteventflag", New IntPtr(&HD61720))
+
+
+
     End sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
