@@ -1,0 +1,36 @@
+2|Gaping Dragon
+3|Bell Gargoyles
+4|Priscilla
+5|Sif
+6|Pinwheel
+7|Nito
+9|Chaos Witch Quelaag
+10|Bed of Chaos
+11|Iron Golem
+12|Ornstein & Smough
+13|4 Kings
+14|Seath
+15|Gwyn
+1000|Solaire at first position
+1004|Solaire is hostile
+1005|Solaire is dead
+11010100|Undead Burg ladder kicked
+11010621|Sunlight Altar gate open
+11010901|Taurus Demon
+11010902|Capra Demon
+11020302|Firelink Shrine elevator
+11200900|Moonlight Butterfly
+11210000|Sanctuary Guardian
+11210001|Artorias
+11210002|Manus
+11210004|Kalameet
+11410410|Demon Firesage
+11410900|Ceaseless Discharge
+11410901|Centipede Demon
+11510900|Gwyndolin
+11510272|Dark Anor Londo
+11600100|New Londo Drained
+11810103|Undead Asylum, Cell Door
+11810112|Undead Asylum, Boss Door
+11810105|Undead Asylum, Lower Oscar Door
+11810106|Undead Asylum, Upper Oscar Door
