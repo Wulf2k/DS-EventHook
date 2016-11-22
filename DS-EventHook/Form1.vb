@@ -555,6 +555,7 @@ Public Class Form1
         rlsHooks.Add("hook1seteventflag", New IntPtr(&HD38CB0))
         rlsHooks.Add("hook2", New IntPtr(&H528CD5))
         rlsHooks.Add("hook2return", New IntPtr(&H528CDA))
+        'check 528C50, in pure form there?
         rlsHooks.Add("hook2seteventflag", New IntPtr(&HBBEEB0))
         rlsHooks.Add("seteventflag", New IntPtr(&HD60190))
 
