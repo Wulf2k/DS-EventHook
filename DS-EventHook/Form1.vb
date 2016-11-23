@@ -266,6 +266,10 @@ Public Class Form1
             dgvEvents.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
             dgvEvents.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
 
+            For each column as DataGridViewColumn In dgvEvents.columns
+                column.SortMode = DataGridViewColumnSortMode.NotSortable
+            Next
+
         
 
             refTimer = New System.Windows.Forms.Timer
@@ -353,21 +357,28 @@ Public Class Form1
         a.pos = hook2mem
         a.Asm("pushad")
         a.Asm("mov eax, vardump")
-
+'
         a.Asm("startloop:")
-        a.Asm("mov ebx, [eax]")
-        a.Asm("cmp ebx, 0")
+        a.Asm("mov edx, [eax]")
+        a.Asm("cmp edx, 0")
         a.Asm("je exitloop")
-
-        a.Asm("add eax, 0x4")
+'
+        a.Asm("add eax, 0x8")
         a.Asm("jmp startloop")
-
+'
         a.Asm("exitloop:")
-        a.Asm("mov ebx, [ecx+0x28]")
-        a.Asm("mov [eax], ebx")
+        a.Asm("mov edx, [ebx-0x8]")
+        a.Asm("mov [eax], edx")
+        a.Asm("add eax, 4")
+        a.Asm("mov edx, [ebx-0x4]")
+        a.Asm("mov [eax], edx")
+
         a.Asm("popad")
-        a.Asm("call " & hooks("hook2seteventflag").toint32())
+        a.Asm("mov edx, 1")
         a.Asm("jmp hookreturn")
+
+
+
 
         WriteProcessMemory(_targetProcessHandle, hook2mem, a.bytes, a.bytes.length, 0)
 
@@ -378,6 +389,7 @@ Public Class Form1
         a.asm("jmp newmem")
 
         WriteProcessMemory(_targetProcessHandle, hooks("hook2"), a.bytes, a.bytes.length, 0)
+        
     End sub
     Private Sub initGetFlagFunc()
         getflagfuncmem = VirtualAllocEx(_targetProcessHandle, 0, &H8000, MEM_COMMIT, PAGE_EXECUTE_READWRITE)
@@ -460,15 +472,27 @@ Public Class Form1
 
         loc = hook2mem + &H400
         Do
+
             id = ReadInt32(loc)
+            dim shift = ReadInt8(loc + 4) And &HFFFF
+
             If id > 0
                 WriteInt32(loc, 0)
+                WriteInt32(loc+4, 0)
                 name = ""
-                For each row  As DataGridViewRow In dgvNames.Rows
-                    If row.cells("id").value = id Then name = row.cells("name").value
-                Next
-                dgvEvents.Rows.Add({name, id})
-                dgvEvents.Rows(dgvEvents.Rows.Count - 1).HeaderCell.Value = TimeOfDay.ToLongTimeString
+
+                If id > 100 Then
+                    id = id + shift
+
+                    For each row  As DataGridViewRow In dgvNames.Rows
+                        If row.cells("id").value = id Then name = row.cells("name").value
+                    Next
+                    dgvEvents.Rows.Add({name, id, 1})
+                    dgvEvents.Rows(dgvEvents.Rows.Count - 1).DefaultCellStyle.BackColor = Color.LightGray
+                    dgvEvents.Rows(dgvEvents.Rows.Count - 1).HeaderCell.Value = TimeOfDay.ToLongTimeString
+                End If
+
+
             End If
             loc +=4
         Loop While id > 0
@@ -487,9 +511,9 @@ Public Class Form1
             WriteInt32(loc + 8, 0)
         End If
 
-        If dgvEvents.Rows.Count > nmbMaxFlags.Value Then
+        While dgvEvents.Rows.Count > nmbMaxFlags.Value 
             dgvEvents.Rows.Remove(dgvEvents.Rows(0))
-        End If
+        End While
 
         refTimer.start
     End Sub
@@ -553,10 +577,8 @@ Public Class Form1
         rlsHooks.Add("hook1", New IntPtr(&HBC1CEA))
         rlsHooks.Add("hook1return", New IntPtr(&HBC1CEF))
         rlsHooks.Add("hook1seteventflag", New IntPtr(&HD38CB0))
-        rlsHooks.Add("hook2", New IntPtr(&H528CD5))
-        rlsHooks.Add("hook2return", New IntPtr(&H528CDA))
-        'check 528C50, in pure form there?
-        rlsHooks.Add("hook2seteventflag", New IntPtr(&HBBEEB0))
+        rlsHooks.Add("hook2", New IntPtr(&HBBEF0F))
+        rlsHooks.Add("hook2return", New IntPtr(&HBBEF14))
         rlsHooks.Add("seteventflag", New IntPtr(&HD60190))
 
 
@@ -564,9 +586,8 @@ Public Class Form1
         dbgHooks.Add("hook1", New IntPtr(&HBC23CA))
         dbgHooks.Add("hook1return", New IntPtr(&HBC23CF))
         dbgHooks.Add("hook1seteventflag", New IntPtr(&HD3A240))
-        dbgHooks.Add("hook2", New IntPtr(&H5294E5))
-        dbgHooks.Add("hook2return", New IntPtr(&H5294EA))
-        dbgHooks.Add("hook2seteventflag", New IntPtr(&HBBF590))
+        dbgHooks.Add("hook2", New IntPtr(&HBBF5EF))
+        dbgHooks.Add("hook2return", New IntPtr(&HBBF5F4))
         dbgHooks.Add("seteventflag", New IntPtr(&HD61720))
 
 
@@ -592,13 +613,14 @@ Public Class Form1
     End Sub
     Private sub loadNames()
         Try
+            
             dgvNames.Rows.Clear
             Dim names() As String = {""}
             If File.Exists("DS-EventHook-IDs.txt") Then
                 names = File.ReadAllLines("DS-EventHook-IDs.txt")
-            Else
-                names = My.Resources.NamedIDs.Split(Environment.newline)
             End If
+
+            'Add IDs from TXT file
             For each line In names
                 if line.Contains("|") Then
                 Dim id As integer = convert.ToInt32(line.Split("|")(0))
@@ -607,6 +629,27 @@ Public Class Form1
                 dgvNames.Rows.Add({id, name})
                 End If
             Next
+
+
+            'Merge but don't overwrite IDs I've found with IDs from TXT file
+            Dim defaultIDs() = My.Resources.NamedIDs.Split(Environment.newline)
+            For each defaultid In defaultIDs
+                If defaultid.Contains("|") Then
+                    Dim exists = False
+                    Dim did As Integer = convert.toint32(defaultid.Split("|")(0))
+                    Dim dname = defaultid.Split("|")(1)
+                    For each oldid In names
+                        If oldid.Contains("|") then
+                            Dim oid As integer = Convert.ToInt32(oldid.Split("|")(0))
+                            If did = oid Then exists = true
+                        End If
+                    Next
+                    If not exists Then dgvNames.Rows.Add({did, dname})
+                End If
+            Next
+
+
+
             dgvNames.Sort(dgvNames.Columns("id"), System.ComponentModel.ListSortDirection.Ascending)
         Catch ex As Exception
             MsgBox("Error reading stored names." & Environment.NewLine & ex.Message)
@@ -638,7 +681,7 @@ Public Class Form1
 
     End Sub
     Private sub IDSelected(sender as Object, e As DataGridViewCellEventArgs) Handles dgvNames.CellClick
-        If e.ColumnIndex = (0) And dgvNames.Rows.Count > 0 Then
+        If (dgvNames.Rows.Count > 0 And e.RowIndex > -1) Then
             txtID.Text = dgvNames.Rows(e.RowIndex).Cells("id").value
         End If
     End sub
@@ -658,7 +701,14 @@ Public Class Form1
             tmpbytes = {&He8, &Hc1, &H6f, &H17, 0}
             WriteProcessMemory(_targetProcessHandle, hooks("hook1"), tmpbytes, 5, 0)
 
-            tmpbytes = {&He8, &Hd6, &H61, &H69, 0}
+            tmpbytes = {&HBA, 1, 0, 0, 0}
+            WriteProcessMemory(_targetProcessHandle, hooks("hook2"), tmpbytes, 5, 0)
+        End If
+        If exeVER = "Debug" Then
+            tmpbytes = {&HE8, &H71, &H7E, &H17, 0}
+            WriteProcessMemory(_targetProcessHandle, hooks("hook1"), tmpbytes, 5, 0)
+
+            tmpbytes = {&HBA, 1, 0, 0, 0}
             WriteProcessMemory(_targetProcessHandle, hooks("hook2"), tmpbytes, 5, 0)
         End If
         

@@ -51,7 +51,7 @@ Partial Class Form1
         'btnHook
         '
         Me.btnHook.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
-        Me.btnHook.Location = New System.Drawing.Point(16, 507)
+        Me.btnHook.Location = New System.Drawing.Point(16, 679)
         Me.btnHook.Name = "btnHook"
         Me.btnHook.Size = New System.Drawing.Size(75, 23)
         Me.btnHook.TabIndex = 0
@@ -68,23 +68,23 @@ Partial Class Form1
         Me.dgvEvents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvEvents.Location = New System.Drawing.Point(6, 6)
         Me.dgvEvents.Name = "dgvEvents"
-        Me.dgvEvents.Size = New System.Drawing.Size(472, 425)
+        Me.dgvEvents.Size = New System.Drawing.Size(472, 597)
         Me.dgvEvents.TabIndex = 1
         '
         'nmbMaxFlags
         '
         Me.nmbMaxFlags.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.nmbMaxFlags.Location = New System.Drawing.Point(431, 437)
+        Me.nmbMaxFlags.Location = New System.Drawing.Point(431, 609)
         Me.nmbMaxFlags.Name = "nmbMaxFlags"
         Me.nmbMaxFlags.Size = New System.Drawing.Size(47, 20)
         Me.nmbMaxFlags.TabIndex = 2
-        Me.nmbMaxFlags.Value = New Decimal(New Integer() {18, 0, 0, 0})
+        Me.nmbMaxFlags.Value = New Decimal(New Integer() {26, 0, 0, 0})
         '
         'Label1
         '
         Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.Label1.AutoSize = true
-        Me.Label1.Location = New System.Drawing.Point(395, 439)
+        Me.Label1.Location = New System.Drawing.Point(395, 611)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(30, 13)
         Me.Label1.TabIndex = 3
@@ -100,7 +100,7 @@ Partial Class Form1
         Me.tabs.Location = New System.Drawing.Point(12, 12)
         Me.tabs.Name = "tabs"
         Me.tabs.SelectedIndex = 0
-        Me.tabs.Size = New System.Drawing.Size(492, 489)
+        Me.tabs.Size = New System.Drawing.Size(492, 661)
         Me.tabs.TabIndex = 4
         '
         'tabLog
@@ -112,7 +112,7 @@ Partial Class Form1
         Me.tabLog.Location = New System.Drawing.Point(4, 22)
         Me.tabLog.Name = "tabLog"
         Me.tabLog.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabLog.Size = New System.Drawing.Size(484, 463)
+        Me.tabLog.Size = New System.Drawing.Size(484, 635)
         Me.tabLog.TabIndex = 0
         Me.tabLog.Text = "Log"
         '
@@ -130,14 +130,14 @@ Partial Class Form1
         Me.tabIDs.Location = New System.Drawing.Point(4, 22)
         Me.tabIDs.Name = "tabIDs"
         Me.tabIDs.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabIDs.Size = New System.Drawing.Size(484, 463)
+        Me.tabIDs.Size = New System.Drawing.Size(484, 635)
         Me.tabIDs.TabIndex = 1
         Me.tabIDs.Text = "IDs"
         '
         'btnSave
         '
         Me.btnSave.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.btnSave.Location = New System.Drawing.Point(258, 434)
+        Me.btnSave.Location = New System.Drawing.Point(258, 606)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(220, 23)
         Me.btnSave.TabIndex = 16
@@ -148,7 +148,7 @@ Partial Class Form1
         '
         Me.btnLoad.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left)  _
             Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.btnLoad.Location = New System.Drawing.Point(6, 434)
+        Me.btnLoad.Location = New System.Drawing.Point(6, 606)
         Me.btnLoad.Name = "btnLoad"
         Me.btnLoad.Size = New System.Drawing.Size(246, 23)
         Me.btnLoad.TabIndex = 15
@@ -158,7 +158,7 @@ Partial Class Form1
         'btnSet
         '
         Me.btnSet.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.btnSet.Location = New System.Drawing.Point(403, 406)
+        Me.btnSet.Location = New System.Drawing.Point(403, 578)
         Me.btnSet.Name = "btnSet"
         Me.btnSet.Size = New System.Drawing.Size(75, 23)
         Me.btnSet.TabIndex = 14
@@ -168,7 +168,7 @@ Partial Class Form1
         'txtValue
         '
         Me.txtValue.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.txtValue.Location = New System.Drawing.Point(261, 408)
+        Me.txtValue.Location = New System.Drawing.Point(261, 580)
         Me.txtValue.Name = "txtValue"
         Me.txtValue.Size = New System.Drawing.Size(58, 20)
         Me.txtValue.TabIndex = 12
@@ -176,7 +176,7 @@ Partial Class Form1
         'btnGet
         '
         Me.btnGet.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.btnGet.Location = New System.Drawing.Point(325, 406)
+        Me.btnGet.Location = New System.Drawing.Point(325, 578)
         Me.btnGet.Name = "btnGet"
         Me.btnGet.Size = New System.Drawing.Size(75, 23)
         Me.btnGet.TabIndex = 11
@@ -187,7 +187,7 @@ Partial Class Form1
         '
         Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
         Me.Label2.AutoSize = true
-        Me.Label2.Location = New System.Drawing.Point(5, 411)
+        Me.Label2.Location = New System.Drawing.Point(5, 583)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(58, 13)
         Me.Label2.TabIndex = 10
@@ -197,7 +197,7 @@ Partial Class Form1
         '
         Me.txtID.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left)  _
             Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.txtID.Location = New System.Drawing.Point(73, 408)
+        Me.txtID.Location = New System.Drawing.Point(73, 580)
         Me.txtID.Name = "txtID"
         Me.txtID.Size = New System.Drawing.Size(182, 20)
         Me.txtID.TabIndex = 9
@@ -210,13 +210,13 @@ Partial Class Form1
         Me.dgvNames.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvNames.Location = New System.Drawing.Point(6, 6)
         Me.dgvNames.Name = "dgvNames"
-        Me.dgvNames.Size = New System.Drawing.Size(472, 396)
+        Me.dgvNames.Size = New System.Drawing.Size(472, 568)
         Me.dgvNames.TabIndex = 2
         '
         'btnUnhook
         '
         Me.btnUnhook.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
-        Me.btnUnhook.Location = New System.Drawing.Point(97, 507)
+        Me.btnUnhook.Location = New System.Drawing.Point(97, 679)
         Me.btnUnhook.Name = "btnUnhook"
         Me.btnUnhook.Size = New System.Drawing.Size(75, 23)
         Me.btnUnhook.TabIndex = 4
@@ -227,16 +227,16 @@ Partial Class Form1
         '
         Me.lblVer.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.lblVer.AutoSize = true
-        Me.lblVer.Location = New System.Drawing.Point(416, 512)
+        Me.lblVer.Location = New System.Drawing.Point(416, 684)
         Me.lblVer.Name = "lblVer"
         Me.lblVer.Size = New System.Drawing.Size(76, 13)
         Me.lblVer.TabIndex = 11
-        Me.lblVer.Text = "2016.11.21.22"
+        Me.lblVer.Text = "2016.11.23.03"
         '
         'btnUpdate
         '
         Me.btnUpdate.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
-        Me.btnUpdate.Location = New System.Drawing.Point(178, 507)
+        Me.btnUpdate.Location = New System.Drawing.Point(178, 679)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(182, 23)
         Me.btnUpdate.TabIndex = 77
@@ -248,7 +248,7 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(512, 537)
+        Me.ClientSize = New System.Drawing.Size(512, 709)
         Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.lblVer)
         Me.Controls.Add(Me.btnUnhook)
