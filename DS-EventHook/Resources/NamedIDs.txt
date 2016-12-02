@@ -12,6 +12,7 @@
 14|Dead, Seath
 15|Dead, Gwyn
 16|Dead, Asylum Demon
+151|Anor Londo, Darkmoon Knightess bonfire inactive
 250|Obtained, Weapon Smithbox
 251|Obtained, Armor Smithbox
 252|Obtained, Repairbox
@@ -124,13 +125,26 @@
 1863|Ciaran, Hostile
 1864|Ciaran, Dead
 1872|Elizabeth, Dead
+8131|Estus Flask, Upgraded to +1
+8132|Estus Flask, Upgraded to +2
+8133|Estus Flask, Upgraded to +3
+8134|Estus Flask, Upgraded to +4
+8135|Estus Flask, Upgraded to +5
+8136|Estus Flask, Upgraded to +6
+8137|Estus Flask, Upgraded to +7
+11000100|Depths, Shortcut door opened
+11000120|Depths, Bonfire door opened
+11000600|Depths, Large Ember chest opened
 11010090|Undead Burg, Fog Gate
 11010100|Undead Burg, Shortcut Ladder
+11010101|Undead Burg, Gate to Female Merchant
 11010120|Undead Burg, Flaming Barrel kicked down
 11010160|Undead Burg, Shortcut Door to Lower Burg
 11010172|Undead Burg, Basement Key Door
 11010191|Undead Burg, Watchtower upper door
 11010192|Undead Burg, Watchtower lower door
+11010403|Lower Undead Burg, Large Soul of a Lost Undead corpse collapsed
+11010404|Lower Undead Burg, Sorcerer Set corpse collapsed
 11010591|Obtained, White Sign Soapstone
 11010594|Obtained, Miracle: Lightning Spear
 11010621|Undead Burg, Sunlight Altar gate open
@@ -163,11 +177,43 @@
 11410410|Boss Defeated, Demon Firesage
 11410900|Boss Defeated, Ceaseless Discharge
 11410901|Boss Defeated, Centipede Demon
+11500091|Sen's Fortress, Pre-Bonfire fog gate
+11500100|Sen's Fortress, exited Cage Elevator
 11500101|Sen's Fortress, Cage Elevator
+11500102|Sen's Fortress, Cage Elevator open
+11500110|Sen's Fortress, Empty Cage #2 open
+11500111|Sen's Fortress, Empty Cage #3 open
+11500112|Sen's Fortress, Big Hat Logan Cage open
+11500113|Sen's Fortress, Empty Cage #4 open
+11500115|Sen's Fortress, Empty Cage #1 open
+11500116|Sen's Fortress, Soul of a Hero Cage open
+11500602|Sen's Fortress, 2x Large Titanite Shard chest opened
+11500604|Sen's Fortress, Divine Blessing chest opened
+11500609|Sen's Fortress, Flame Stoneplate Ring chest opened
+11500610|Sen's Fortress, Rare Ring of Sacrifice chest opened
+11500860|Dead, Sen's Fortress, Undead Prince Ricard
+11500861|Dead, Sen's Fortress, Prowling Demon #4
+11500862|Dead, Sen's Fortress, Prowling Demon #3
+11500863|Dead, Sen's Fortress, Prowling Demon #2
+11500864|Dead, Sen's Fortress, Prowling Demon #1
+11500865|Dead, Sen's Fortress, Bomb-Tossing Giant
+11500867|Dead, Sen's Fortress, Chain-Pulling Giant
+11505280|Sen's Fortress, Arrow Trap #1 fired
+11505281|Sen's Fortress, Arrow Trap #2 fired
+11505282|Sen's Fortress, Arrow Trap #3 fired
+11505283|Sen's Fortress, Arrow Trap #4 fired
+11505284|Sen's Fortress, Arrow Trap Hall fired
+11505285|Sen's Fortress, Arrow Trap #5 fired
 11510200|Anor Londo, Large Doorway to Main Hall
 11510210|Anor Londo, Shortcut Door to Giant Blacksmith
+11510220|Anor Londo, Elevator active
 11510251|Anor Londo, Shortcut Door to Solaire Bonfire
-11510272|Dark Anor Londo
+11510272|Anor Londo, Dark
+11510615|Anor Londo, Empty chest opened
+11510616|Anor Londo, Brass set chest opened
+11510617|Anor Londo, Twinkling Titanite chest opened
+11510618|Anor Londo, Demon Titanite chest opened
+11510851|Dead, Anor Londo, First Mimic
 11510900|Boss Defeated, Gwyndolin
 11600100|New Londo Ruins, Drained
 11600110|New Londo Ruins, Door to the Seal
