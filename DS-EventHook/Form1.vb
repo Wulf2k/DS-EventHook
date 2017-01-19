@@ -455,9 +455,9 @@ Public Class Form1
 
         loc = hook1mem + &H400
         Do
-            id = ReadInt32(loc)
+            id = ReadUInt32(loc)
             value = ReadInt32(loc + 4)
-            If id > 0
+            If not (id = 0)
                 WriteInt32(loc, 0)
                 WriteInt32(loc+4, 0)
                 name = ""
@@ -468,20 +468,20 @@ Public Class Form1
                 dgvEvents.Rows(dgvEvents.Rows.Count - 1).HeaderCell.Value = TimeOfDay.ToLongTimeString
             End If
             loc +=8
-        Loop While id > 0
+        Loop While math.Abs(id) > 0
 
         loc = hook2mem + &H400
         Do
 
-            id = ReadInt32(loc)
+            id = ReadUInt32(loc)
             dim shift = ReadInt8(loc + 4) And &HFFFF
 
-            If id > 0
+            If not (id = 0)
                 WriteInt32(loc, 0)
                 WriteInt32(loc+4, 0)
                 name = ""
 
-                If id > 100 Then
+                If id > CUInt(100) Then
                     id = id + shift
 
                     For each row  As DataGridViewRow In dgvNames.Rows
@@ -494,8 +494,8 @@ Public Class Form1
 
 
             End If
-            loc +=4
-        Loop While id > 0
+            loc +=8
+        Loop While math.Abs(id) > 0
 
 
 

@@ -74,13 +74,22 @@
 1114|Griggs, Hostile
 1115|Griggs, Dead
 1117|Griggs, Hollow At Sen's Fortress
+1121|Dusk, Rescued From Golem
+1122|Dusk, Available At Summon Sign
+1123|Dusk, Summoned
+1125|Dusk, Dead
 1140|Anastacia, Initial State
 1141|Anastacia, Dead
 1142|Anastacia, Revived
 1146|Anastacia, Dead But Ready to Revive
 1171|Reah, At Firelink
+1173|Reah, In Tomb of the Giants
+1174|Reah, Rescued in Tomb of the Giants
+1175|Reah, In Undead Parish
 1176|Reah, Hostile
 1177|Reah, Dead
+1181|Reah, ? Hollow In Duke's Archives?
+1192|Petrus, Abandons Party
 1193|Petrus, Returned to Firelink
 1194|Petrus, After Paid Lautrec for Tip
 1197|Petrus, Hostile
@@ -88,18 +97,23 @@
 1211|Vince, At Firelink
 1213|Vince, Hostile
 1214|Vince, Dead
+1216|Vince, In Tomb of the Giants
 1221|Nico, At Firelink
 1223|Nico, Hostile
 1224|Nico, Dead
+1226|Nico, In Tomb of the Giants
 1241|Gwyndolin, Disapproves
 1251|Laurentius, Rescue Completed
+1252|Laurentius, In Firelink Shrine
 1253|Laurentius, Hostile
 1254|Laurentius, Dead
-1256|Laurentius, Informed of Quelana
+1256|Laurentius, Informed of Quelana (See Also: 11020575)
 1257|Laurentius, Hollow In Blighttown
 1272|Fair Lady, Dead
 1281|Eingyi, Steps Aside
 1283|Eingyi, Hostile
+1284|Eingyi, Dead
+1286|Eingyi, Gained His Trust
 1294|Quelana, Hostile
 1295|Quelana, Dead
 1311|Ingward, After Lordvessel Placed?
@@ -163,12 +177,18 @@
 1578|Lautrec, In Anor Londo
 1603|Shiva, Hostile
 1604|Shiva, Dead
+1621|Patches, After Walking Over Catacombs Bridge
+1623|Patches, In Tomb of the Giants
+1624|Patches, After Kicked Into Pit
+1625|Patches, Hostile (cleric questline)
+1626|Patches, At Firelink Shrine
 1627|Patches, Hostile
 1628|Patches, Dead
 1641|Frampt, Snoring in Firelink Shrine
 1642|Frampt, Present in Firelink Shrine
 1644|Frampt, After Placing Lordvessel
 1647|Frampt, Disapproves and Leaves
+1650|? In Firelink?
 1671|Kaathe, Appears?
 1677|Kaathe, Disapproves and Leaves
 1700|Oswald, Starting Location
@@ -178,7 +198,7 @@
 1763|Shiva's Bodyguard, Hostile
 1764|Shiva's Bodyguard, Dead
 1766|Shiva's Bodyguard, ?
-1821|Gough, Not Present
+1821|Gough, On Tower
 1822|Gough, Hostile
 1823|Gough, Dead
 1841|Chester, Hostile
@@ -186,6 +206,7 @@
 1862|Ciaran, Gifted Artorias's Soul
 1863|Ciaran, Hostile
 1864|Ciaran, Dead
+1871|Elizabeth, Hostile (Unused)
 1872|Elizabeth, Dead
 8131|Estus Flask, Upgraded to +1
 8132|Estus Flask, Upgraded to +2
@@ -202,6 +223,7 @@
 11010100|Undead Burg, Shortcut Ladder
 11010101|Undead Burg, Gate to Female Merchant
 11010120|Undead Burg, Flaming Barrel kicked down
+11010140|Undead Burg, Master Key Door (to Gold Resin)
 11010160|Undead Burg, Shortcut Door to Lower Burg
 11010172|Undead Burg, Basement Key Door
 11010191|Undead Burg, Watchtower upper door
@@ -212,7 +234,7 @@
 11010594|Obtained, Miracle: Lightning Spear
 11010621|Undead Burg, Sunlight Altar gate open
 11010650|Undead Burg, Black Firebomb chest opened
-11010651|Undead Burg, Gold Pine Resin chest opened
+11010651|Undead Burg, Gold Pine Resin Chest
 11010700|Undead Parish, First Bell of Awakening
 11010790|Undead Burg, Hellkite's First Appearance
 11010791|Undead Burg, Hellkite's Second Appearance
@@ -223,6 +245,7 @@
 11010902|Boss Defeated, Capra Demon
 11015031|Pray at the Altar of Sunlight
 11020302|Undead Parish, Elevator to Firelink
+11020575|Laurentius, Knows About Quelana
 11020599|Petrus, Gifts Copper Coin
 11020602|Laurentius, Gifts Pyromancy Flame
 11020700|Firelink Shrine, Lloyd's Talisman chest opened
@@ -230,14 +253,187 @@
 11020702|Firelink Shrine, Homeward Bone chest opened
 11020703|Firelink Shrine, Cracked Red Eye Orb opened
 11025060|Firelink Shrine, Curled Up Like A Ball
+11025200|Firelink Shrine, Skeleton Stands Up
+11025201|Firelink Shrine, Skeleton Stands Up
+11025202|Firelink Shrine, Skeleton Stands Up
+11025203|Firelink Shrine, Skeleton Stands Up
+11025206|Firelink Shrine, Skeleton Stands Up
+11025207|Firelink Shrine, Skeleton Stands Up
+11025208|Firelink Shrine, Skeleton Stands Up
+11025209|Firelink Shrine, Skeleton Stands Up
+11025210|Firelink Shrine, Skeleton Stands Up
+11025211|Firelink Shrine, Skeleton Stands Up
+11025212|Firelink Shrine, Skeleton Stands Up
+11025213|Firelink Shrine, Skeleton Stands Up
 11200592|Alvina, Gift Cat Covenant Ring
 11200900|Boss Defeated, Moonlight Butterfly
 11210000|Boss Defeated, Sanctuary Guardian
 11210001|Boss Defeated, Artorias
 11210002|Boss Defeated, Manus
 11210004|Boss Defeated, Kalameet
+11210021|Chasm of the Abyss, Sif Rescued
+11210025|Chasm of the Abyss, Illusory Wall
+11210050|Royal Wood, Kalemeet First Encounter
+11210101|Oolacile, Elevator (Position - needs interaction beforehand)
+11210102|Oolacile, Elevator (Operability - combine w/ next)
+11210103|Oolacile, Elevator (Unlocked - combine w/ previous)
+11210111|Royal Wood, Elevator #1 (Position)
+11210121|Royal Wood, Elevator #2 (Position)
+11210122|Royal Wood, Elevator #2 (Operability - combine w/ next)
+11210123|Royal Wood, Elevator #2 (Unlocked - combine w/ previous)
+11210131|Chasm of the Abyss, Shortcut Elevator (Position)
+11210132|Chasm of the Abyss, Shortcut Elevator (Operability - combine w/ next)
+11210133|Chasm of the Abyss, Shortcut Elevator (Unlocked - combine w/ previous)
+11210141|Oolacile, Elevator to Chasm (Position)
+11210205|Oolacile, Sound Effect for Illusory Wall #1
+11210206|Oolacile, Sound Effect for Illusory Wall #2
+11210340|Chasm of the Abyss, Alvina 1st Warp
+11210341|Chasm of the Abyss, Alvina 2nd Warp
+11210345|Chasm of the Abyss, Alvina 3rd Warp
+11210346|Chasm of the Abyss, Alvina Gone?
+11210600|Royal Wood, Blue Titanite Slab chest opened
 11210650|Oolacile, Crest Key Door
+11210901|Dead, Oolacile, Chester Invasion
+11300090|Catacombs, Fog Gate
+11300100|Catacombs, Breakaway Floor
+11300101|Catacombs, Breakaway Floor
+11300102|Catacombs, Breakaway Floor
+11300103|Catacombs, Breakaway Floor
+11300104|Catacombs, Breakaway Floor
+11300105|Catacombs, Breakaway Floor
+11300150|Catacombs, Giant Skeleton Jumps Down
+11300160|Catacombs, Illusory Wall
+11300210|Catacombs, Path to Vamos Open
+11300402|Catacombs, Bridge #1
+11300403|Catacombs, Bridge #2
+11300700|Catacombs, Spike Trap
+11300701|Catacombs, Spike Trap
+11300703|Catacombs, Spike Trap
+11300704|Catacombs, Spike Trap
+11300705|Catacombs, Spike Trap
+11300706|Catacombs, Spike Trap
+11300707|Catacombs, Spike Trap
+11300708|Catacombs, Spike Trap
+11300709|Catacombs, Spike Trap
+11300710|Catacombs, Spike Trap
+11300712|Catacombs, Spike Trap
+11300713|Catacombs, Spike Trap
+11300714|Catacombs, Spike Trap
+11300715|Catacombs, Spike Trap
+11300716|Catacombs, Spike Trap
+11300717|Catacombs, Spike Trap
+11300718|Catacombs, Spike Trap
+11300719|Catacombs, Spike Trap
+11300850|Dead, Catacombs, Necromancer #2
+11300851|Dead, Catacombs, Necromancer #4
+11300852|Dead, Catacombs, Necromancer #5
+11300853|Dead, Catacombs, Necromancer #3
+11300854|Dead, Catacombs, Necromancer #1
+11300855|Dead, Catacombs, Necromancer #6
+11300858|Dead, Catacombs, Prowling Demon
+11300859|Dead, Catacombs, Black Knight
+11300900|Catacombs, Door #1 (Lever Operated)
+11300901|Catacombs, Door #2 (Lever Operated)
+11305060|Catacombs, ? Related to: Path to Vamos Open?
+11305070|Catacombs, Skeleton Stands Up
+11305071|Catacombs, Skeleton Stands Up
+11305072|Catacombs, Skeleton Stands Up
+11305073|Catacombs, Skeleton Stands Up
+11305074|Catacombs, Skeleton Stands Up
+11305075|Catacombs, Skeleton Stands Up
+11305076|Catacombs, Skeleton Stands Up
+11305077|Catacombs, Skeleton Stands Up
+11305078|Catacombs, Skeleton Stands Up
+11305079|Catacombs, Skeleton Stands Up
+11305080|Catacombs, Skeleton Stands Up
+11305081|Catacombs, Skeleton Stands Up
+11305082|Catacombs, Skeleton Stands Up
+11305083|Catacombs, Skeleton Stands Up
+11305086|Catacombs, Skeleton Stands Up
+11305087|Catacombs, Skeleton Stands Up
+11305088|Catacombs, Skeleton Stands Up
+11305100|Catacombs, Relates to Necromancer #2
+11305101|Catacombs, Relates to Necromancer #2
+11305102|Catacombs, Relates to Necromancer #2
+11305103|Catacombs, Relates to Necromancer #2
+11305104|Catacombs, Relates to Necromancer #2
+11305105|Catacombs, Relates to Necromancer #2
+11305106|Catacombs, Relates to Necromancer #2
+11305107|Catacombs, Relates to Necromancer #2
+11305108|Catacombs, Relates to Necromancer #2
+11305109|Catacombs, Relates to Necromancer #2
+11305110|Catacombs, Relates to Necromancer #2
+11305111|Catacombs, Relates to Necromancer #2
+11305112|Catacombs, Relates to Necromancer #2
+11305113|Catacombs, Relates to Necromancer #2
+11305114|Catacombs, Relates to Necromancer #4
+11305115|Catacombs, Relates to Necromancer #4
+11305116|Catacombs, Relates to Necromancer #4
+11305117|Catacombs, Relates to Necromancer #4
+11305118|Catacombs, Relates to Necromancer #4
+11305119|Catacombs, Relates to Necromancer #4
+11305120|Catacombs, Relates to Necromancer #4
+11305121|Catacombs, Relates to Necromancer #4
+11305122|Catacombs, Relates to Necromancer #5
+11305123|Catacombs, Relates to Necromancer #5
+11305124|Catacombs, Relates to Necromancer #5
+11305125|Catacombs, Relates to Necromancer #5
+11305126|Catacombs, Relates to Necromancer #5
+11305127|Catacombs, Relates to Necromancer #5
+11305128|Catacombs, Relates to Necromancer #5
+11305129|Catacombs, Relates to Necromancer #3
+11305130|Catacombs, Relates to Necromancer #3
+11305131|Catacombs, Relates to Necromancer #3
+11305132|Catacombs, Relates to Necromancer #3
+11305133|Catacombs, Relates to Necromancer #3
+11305134|Catacombs, Relates to Necromancer #3
+11305135|Catacombs, Relates to Necromancer #1
+11305136|Catacombs, Relates to Necromancer #1
+11305137|Catacombs, Relates to Necromancer #1
+11305138|Catacombs, Relates to Necromancer #1
+11305139|Catacombs, Relates to Necromancer #1
+11305140|Catacombs, Relates to Necromancer #1
+11305141|Catacombs, Relates to Necromancer #1
+11305144|Catacombs, Relates to Necromancer #6
+11305145|Catacombs, Relates to Necromancer #6
+11305146|Catacombs, Relates to Necromancer #6
+11305147|Catacombs, Relates to Necromancer #6
+11305148|Catacombs, Relates to Necromancer #6
+11305149|Catacombs, Relates to Necromancer #6
+11305150|Catacombs, Relates to Necromancer #6
+11305210|Catacombs, Wisp
+11305211|Catacombs, Wisp
+11305212|Catacombs, Wisp
+11305213|Catacombs, Wisp
+11305214|Catacombs, Wisp
+11305215|Catacombs, Wisp
+11305216|Catacombs, Wisp
+11305217|Catacombs, Wisp
+11305218|Catacombs, Wisp
+11305219|Catacombs, Wisp
+11305223|Catacombs, Wisp
+11310090|Tomb of the Giants, Fog Gate
+11310100|Tomb of the Giants, Illusory Wall
+11310820|Dead, Tomb of the Giants, Black Knight
+11315060|Tomb of the Giants, Bone Tower in Pit
+11315061|Tomb of the Giants, Bone Tower in Pit
+11315062|Tomb of the Giants, Bone Tower in Pit
+11315063|Tomb of the Giants, Bone Tower in Pit
+11315070|Tomb of the Giants, Bone Tower by Silver Serpent Ring
+11315071|Tomb of the Giants, Bone Tower by Silver Serpent Ring
+11315072|Tomb of the Giants, Bone Tower by Silver Serpent Ring
+11315073|Tomb of the Giants, Bone Tower by Silver Serpent Ring
+11315074|Tomb of the Giants, Bone Tower by Silver Serpent Ring
+11400091|Blighttown, Fog Gate
 11400200|Blighttown, Second Bell of Awakening
+11400850|Dead, Blighttown, Blowdart Sniper
+11400851|Dead, Blighttown, Blowdart Sniper
+11400853|Dead, Blighttown, Blowdart Sniper
+11400854|Dead, Blighttown, Blowdart Sniper.
+11400855|Dead, Blighttown, Blowdart Sniper
+11400856|Dead, Blighttown, Blowdart Sniper
+11400857|Dead, Blighttown, Blowdart Sniper
+11400858|Dead, Blighttown, Blowdart Sniper
 11410340|Lost Izalith, Shortcut to Demon Ruins
 11410401|Demon Ruins, Elevator to Quelaag's Domain
 11410410|Boss Defeated, Demon Firesage
@@ -308,7 +504,7 @@
 11600201|New Londo Ruins, Elevator to Firelink
 11600231|Valley of Drakes, Elevator to Darkroot
 11600592|Obtained, Key to the Seal
-11600650|New Londo, Estoc-carrying Corpse Collapsed
+11600650|New Londo, Transient Curse-carrying Corpse Collapsed
 11605123|Valley of Drakes, Elevator to Darkroot Inoperable
 11700120|Duke's Archives, Bookshelf Door
 11700300|Duke's Archives, Archive Tower Cell Door
