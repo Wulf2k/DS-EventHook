@@ -108,143 +108,96 @@ Public Class Form1
     End Sub
 
     Private Sub checkDarkSoulsVersion()
-        If (ReadUInt32(&H400080) = &HCE9634B4&) Then
+        If (RUInt32(&H400080) = &HCE9634B4&) Then
             exeVER = "Debug"
-        ElseIf (ReadUInt32(&H400080) = &HE91B11E2&) Then
+        ElseIf (RUInt32(&H400080) = &HE91B11E2&) Then
             exeVER = "Beta"
-        ElseIf (ReadUInt32(&H400080) = &HFC293654&) Then
+        ElseIf (RUInt32(&H400080) = &HFC293654&) Then
             exeVER = "Release"
         Else
             exeVER = "Unknown"
         End If
     End Sub
 
-    Public Function ReadInt8(ByVal addr As IntPtr) As SByte
+    Public Function RInt8(ByVal addr As IntPtr) As SByte
         Dim _rtnBytes(0) As Byte
         ReadProcessMemory(_targetProcessHandle, addr, _rtnBytes, 1, vbNull)
         Return _rtnBytes(0)
     End Function
-    Public Function ReadInt16(ByVal addr As IntPtr) As Int16
+    Public Function RInt16(ByVal addr As IntPtr) As Int16
         Dim _rtnBytes(1) As Byte
         ReadProcessMemory(_targetProcessHandle, addr, _rtnBytes, 2, vbNull)
         Return BitConverter.ToInt16(_rtnBytes, 0)
     End Function
-    Public Function ReadInt32(ByVal addr As IntPtr) As Int32
+    Public Function RInt32(ByVal addr As IntPtr) As Int32
         Dim _rtnBytes(3) As Byte
         ReadProcessMemory(_targetProcessHandle, addr, _rtnBytes, 4, vbNull)
-
         Return BitConverter.ToInt32(_rtnBytes, 0)
     End Function
-    Public Function ReadInt64(ByVal addr As IntPtr) As Int64
+    Public Function RInt64(ByVal addr As IntPtr) As Int64
         Dim _rtnBytes(7) As Byte
         ReadProcessMemory(_targetProcessHandle, addr, _rtnBytes, 8, vbNull)
         Return BitConverter.ToInt64(_rtnBytes, 0)
     End Function
-    Public Function ReadUInt16(ByVal addr As IntPtr) As UInt16
+    Public Function RUInt16(ByVal addr As IntPtr) As UInt16
         Dim _rtnBytes(1) As Byte
         ReadProcessMemory(_targetProcessHandle, addr, _rtnBytes, 2, vbNull)
         Return BitConverter.ToUInt16(_rtnBytes, 0)
     End Function
-    Public Function ReadUInt32(ByVal addr As IntPtr) As UInt32
+    Public Function RUInt32(ByVal addr As IntPtr) As UInt32
         Dim _rtnBytes(3) As Byte
         ReadProcessMemory(_targetProcessHandle, addr, _rtnBytes, 4, vbNull)
         Return BitConverter.ToUInt32(_rtnBytes, 0)
     End Function
-    Public Function ReadUInt64(ByVal addr As IntPtr) As UInt64
+    Public Function RUInt64(ByVal addr As IntPtr) As UInt64
         Dim _rtnBytes(7) As Byte
         ReadProcessMemory(_targetProcessHandle, addr, _rtnBytes, 8, vbNull)
         Return BitConverter.ToUInt64(_rtnBytes, 0)
     End Function
-    Public Function ReadFloat(ByVal addr As IntPtr) As Single
+    Public Function RSingle(ByVal addr As IntPtr) As Single
         Dim _rtnBytes(3) As Byte
         ReadProcessMemory(_targetProcessHandle, addr, _rtnBytes, 4, vbNull)
         Return BitConverter.ToSingle(_rtnBytes, 0)
     End Function
-    Public Function ReadDouble(ByVal addr As IntPtr) As Double
+    Public Function RDouble(ByVal addr As IntPtr) As Double
         Dim _rtnBytes(7) As Byte
         ReadProcessMemory(_targetProcessHandle, addr, _rtnBytes, 8, vbNull)
         Return BitConverter.ToDouble(_rtnBytes, 0)
     End Function
-    Public Function ReadIntPtr(ByVal addr As IntPtr) As IntPtr
+    Public Function RIntPtr(ByVal addr As IntPtr) As IntPtr
         Dim _rtnBytes(IntPtr.Size - 1) As Byte
         ReadProcessMemory(_targetProcessHandle, addr, _rtnBytes, IntPtr.Size, Nothing)
         If IntPtr.Size = 4 Then
-            Return New IntPtr(BitConverter.ToUInt32(_rtnBytes, 0))
+            Return New IntPtr(BitConverter.ToInt32(_rtnBytes, 0))
         Else
             Return New IntPtr(BitConverter.ToInt64(_rtnBytes, 0))
         End If
     End Function
-    Public Function ReadBytes(ByVal addr As IntPtr, ByVal size As Int32) As Byte()
+    Public Function RBytes(ByVal addr As IntPtr, ByVal size As Int32) As Byte()
         Dim _rtnBytes(size - 1) As Byte
         ReadProcessMemory(_targetProcessHandle, addr, _rtnBytes, size, vbNull)
         Return _rtnBytes
     End Function
-    Private Function ReadAsciiStr(ByVal addr As UInteger) As String
-        Dim Str As String = ""
-        Dim cont As Boolean = True
-        Dim loc As Integer = 0
-
-        Dim bytes(&H10) As Byte
-
-        ReadProcessMemory(_targetProcessHandle, addr, bytes, &H10, vbNull)
-
-        While (cont And loc < &H10)
-            If bytes(loc) > 0 Then
-
-                Str = Str + Convert.ToChar(bytes(loc))
-
-                loc += 1
-            Else
-                cont = False
-            End If
-        End While
-
-        Return Str
-    End Function
-    Private Function ReadUnicodeStr(ByVal addr As UInteger) As String
-        Dim Str As String = ""
-        Dim cont As Boolean = True
-        Dim loc As Integer = 0
-
-        Dim bytes(&H20) As Byte
 
 
-        ReadProcessMemory(_targetProcessHandle, addr, bytes, &H20, vbNull)
-
-        While (cont And loc < &H20)
-            If bytes(loc) > 0 Then
-
-                Str = Str + Convert.ToChar(bytes(loc))
-
-                loc += 2
-            Else
-                cont = False
-            End If
-        End While
-
-        Return Str
-    End Function
-
-    Public Sub WriteInt32(ByVal addr As IntPtr, val As Int32)
+    Public Sub WInt32(ByVal addr As IntPtr, val As Int32)
         WriteProcessMemory(_targetProcessHandle, addr, BitConverter.GetBytes(val), 4, Nothing)
     End Sub
-    Public Sub WriteUInt32(ByVal addr As IntPtr, val As UInt32)
+    Public Sub WUInt32(ByVal addr As IntPtr, val As UInt32)
         WriteProcessMemory(_targetProcessHandle, addr, BitConverter.GetBytes(val), 4, Nothing)
     End Sub
-    Public Sub WriteFloat(ByVal addr As IntPtr, val As Single)
+    Public Sub WSingle(ByVal addr As IntPtr, val As Single)
         WriteProcessMemory(_targetProcessHandle, addr, BitConverter.GetBytes(val), 4, Nothing)
     End Sub
-    Public Sub WriteBytes(ByVal addr As IntPtr, val As Byte())
+    Public Sub WBytes(ByVal addr As IntPtr, val As Byte())
         WriteProcessMemory(_targetProcessHandle, addr, val, val.Length, Nothing)
     End Sub
-    Public Sub WriteAsciiStr(addr As UInteger, str As String)
-        WriteProcessMemory(_targetProcessHandle, addr, System.Text.Encoding.ASCII.GetBytes(str), str.Length, Nothing)
-    End Sub
+
     Private Sub btnHook_Click(sender As Object, e As EventArgs) Handles btnHook.Click
 
         If ScanForProcess("DARK SOULS", True) Then
             checkDarkSoulsVersion()
-            If Not (exeVER = "Debug" Or exeVER = "Release") then
+            If Not (exeVER = "Debug" Or exeVER = "Release") Then
                 MsgBox("Invalid EXE type.")
                 Return
             End If
@@ -252,8 +205,8 @@ Public Class Form1
             If exeVER = "Release" Then hooks = rlsHooks
             If exeVER = "Debug" Then hooks = dbgHooks
 
-            dgvEvents.Rows.Clear
-            dgvEvents.Columns.Clear
+            dgvEvents.Rows.Clear()
+            dgvEvents.Columns.Clear()
 
             dgvEvents.Columns.Add("name", "Name")
             dgvEvents.Columns.Add("id", "ID")
@@ -266,17 +219,17 @@ Public Class Form1
             dgvEvents.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
             dgvEvents.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
 
-            For each column as DataGridViewColumn In dgvEvents.columns
+            For Each column As DataGridViewColumn In dgvEvents.Columns
                 column.SortMode = DataGridViewColumnSortMode.NotSortable
             Next
 
-        
+
 
             refTimer = New System.Windows.Forms.Timer
             refTimer.Interval = 30
             refTimer.Enabled = True
 
-        
+
 
 
 
@@ -295,7 +248,7 @@ Public Class Form1
 
     End Sub
 
-    Private sub initFlagHook1()
+    Private Sub initFlagHook1()
         hook1mem = VirtualAllocEx(_targetProcessHandle, 0, &H8000, MEM_COMMIT, PAGE_EXECUTE_READWRITE)
         Dim oldProtectionOut As UInteger
         VirtualProtectEx(_targetProcessHandle, hook1mem, &H8000, PAGE_EXECUTE_READWRITE, oldProtectionOut)
@@ -309,7 +262,7 @@ Public Class Form1
         a.AddVar("hookreturn", hooks("hook1return"))
         a.AddVar("startloop", 0)
         a.AddVar("exitloop", 0)
-            
+
         a.pos = hook1mem
         a.Asm("pushad")
         a.Asm("mov eax, vardump")
@@ -330,17 +283,17 @@ Public Class Form1
         a.Asm("call " & hooks("hook1seteventflag").toint32())
         a.Asm("jmp hookreturn")
 
-        WriteProcessMemory(_targetProcessHandle, hook1mem, a.bytes, a.bytes.length, 0)
+        WriteProcessMemory(_targetProcessHandle, hook1mem, a.bytes, a.bytes.Length, 0)
 
 
-        a.Clear
+        a.Clear()
         a.AddVar("newmem", hook1mem)
         a.pos = hooks("hook1").toint32()
-        a.asm("jmp newmem")
+        a.Asm("jmp newmem")
 
-        WriteProcessMemory(_targetProcessHandle, hooks("hook1"), a.bytes, a.bytes.length, 0)
-    End sub
-    Private sub initFlagHook2()
+        WriteProcessMemory(_targetProcessHandle, hooks("hook1"), a.bytes, a.bytes.Length, 0)
+    End Sub
+    Private Sub initFlagHook2()
         hook2mem = VirtualAllocEx(_targetProcessHandle, 0, &H8000, MEM_COMMIT, PAGE_EXECUTE_READWRITE)
         Dim oldProtectionOut As UInteger
         VirtualProtectEx(_targetProcessHandle, hook2mem, &H8000, PAGE_EXECUTE_READWRITE, oldProtectionOut)
@@ -353,19 +306,19 @@ Public Class Form1
         a.AddVar("hookreturn", hooks("hook2return"))
         a.AddVar("startloop", 0)
         a.AddVar("exitloop", 0)
-            
+
         a.pos = hook2mem
         a.Asm("pushad")
         a.Asm("mov eax, vardump")
-'
+        '
         a.Asm("startloop:")
         a.Asm("mov edx, [eax]")
         a.Asm("cmp edx, 0")
         a.Asm("je exitloop")
-'
+        '
         a.Asm("add eax, 0x8")
         a.Asm("jmp startloop")
-'
+        '
         a.Asm("exitloop:")
         a.Asm("mov edx, [ebx-0x8]")
         a.Asm("mov [eax], edx")
@@ -380,17 +333,17 @@ Public Class Form1
 
 
 
-        WriteProcessMemory(_targetProcessHandle, hook2mem, a.bytes, a.bytes.length, 0)
+        WriteProcessMemory(_targetProcessHandle, hook2mem, a.bytes, a.bytes.Length, 0)
 
 
-        a.Clear
+        a.Clear()
         a.AddVar("newmem", hook2mem)
         a.pos = hooks("hook2").toint32()
-        a.asm("jmp newmem")
+        a.Asm("jmp newmem")
 
-        WriteProcessMemory(_targetProcessHandle, hooks("hook2"), a.bytes, a.bytes.length, 0)
-        
-    End sub
+        WriteProcessMemory(_targetProcessHandle, hooks("hook2"), a.bytes, a.bytes.Length, 0)
+
+    End Sub
     Private Sub initGetFlagFunc()
         getflagfuncmem = VirtualAllocEx(_targetProcessHandle, 0, &H8000, MEM_COMMIT, PAGE_EXECUTE_READWRITE)
         Dim oldProtectionOut As UInteger
@@ -416,9 +369,9 @@ Public Class Form1
         a.Asm("popad")
         a.Asm("ret")
 
-        WriteProcessMemory(_targetProcessHandle, getflagfuncmem, a.bytes, a.bytes.length, 0)
+        WriteProcessMemory(_targetProcessHandle, getflagfuncmem, a.bytes, a.bytes.Length, 0)
     End Sub
-    Private sub initSetFlagFunc()
+    Private Sub initSetFlagFunc()
         setflagfuncmem = VirtualAllocEx(_targetProcessHandle, 0, &H8000, MEM_COMMIT, PAGE_EXECUTE_READWRITE)
         Dim oldProtectionOut As UInteger
         VirtualProtectEx(_targetProcessHandle, setflagfuncmem, &H8000, PAGE_EXECUTE_READWRITE, oldProtectionOut)
@@ -436,56 +389,55 @@ Public Class Form1
         a.Asm("mov ecx, [eax]")
         a.Asm("push ecx")
         a.Asm("push ebx")
-        'a.Asm("call " & hooks("seteventflagvalue").toint32)
         a.Asm("call " & hooks("seteventflag").toint32)
         a.Asm("popad")
         a.Asm("ret")
 
-        WriteProcessMemory(_targetProcessHandle, setflagfuncmem, a.bytes, a.bytes.length, 0)
-    End sub
-    
-    Private Sub refTimer_Tick() Handles refTimer.Tick
-        refTimer.Stop
+        WriteProcessMemory(_targetProcessHandle, setflagfuncmem, a.bytes, a.bytes.Length, 0)
+    End Sub
 
-        Dim loc As IntPtr 
+    Private Sub refTimer_Tick() Handles refTimer.Tick
+        refTimer.Stop()
+
+        Dim loc As IntPtr
         Dim name As String
-        Dim id As integer
-        Dim value As integer
+        Dim id As Integer
+        Dim value As Integer
 
 
         loc = hook1mem + &H400
         Do
-            id = ReadUInt32(loc)
-            value = ReadInt32(loc + 4)
-            If not (id = 0)
-                WriteInt32(loc, 0)
-                WriteInt32(loc+4, 0)
+            id = RUInt32(loc)
+            value = RInt32(loc + 4)
+            If Not (id = 0) Then
+                WInt32(loc, 0)
+                WInt32(loc + 4, 0)
                 name = ""
-                For each row  As DataGridViewRow In dgvNames.Rows
-                    If row.cells("id").value = id Then name = row.cells("name").value
+                For Each row As DataGridViewRow In dgvNames.Rows
+                    If row.Cells("id").Value = id Then name = row.Cells("name").Value
                 Next
                 dgvEvents.Rows.Add({name, id, value})
                 dgvEvents.Rows(dgvEvents.Rows.Count - 1).HeaderCell.Value = TimeOfDay.ToLongTimeString
             End If
-            loc +=8
-        Loop While math.Abs(id) > 0
+            loc += 8
+        Loop While Math.Abs(id) > 0
 
         loc = hook2mem + &H400
         Do
 
-            id = ReadUInt32(loc)
-            dim shift = ReadInt8(loc + 4) And &HFFFF
+            id = RUInt32(loc)
+            Dim shift = RInt8(loc + 4) And &HFFFF
 
-            If not (id = 0)
-                WriteInt32(loc, 0)
-                WriteInt32(loc+4, 0)
+            If Not (id = 0) Then
+                WInt32(loc, 0)
+                WInt32(loc + 4, 0)
                 name = ""
 
                 If id > CUInt(100) Then
                     id = id + shift
 
-                    For each row  As DataGridViewRow In dgvNames.Rows
-                        If row.cells("id").value = id Then name = row.cells("name").value
+                    For Each row As DataGridViewRow In dgvNames.Rows
+                        If row.Cells("id").Value = id Then name = row.Cells("name").Value
                     Next
                     dgvEvents.Rows.Add({name, id, 1})
                     dgvEvents.Rows(dgvEvents.Rows.Count - 1).DefaultCellStyle.BackColor = Color.LightGray
@@ -494,31 +446,31 @@ Public Class Form1
 
 
             End If
-            loc +=8
-        Loop While math.Abs(id) > 0
+            loc += 8
+        Loop While Math.Abs(id) > 0
 
 
 
         loc = getflagfuncmem + &H400
-        If ReadInt32(loc + 8) = 1 Then
-            id = ReadInt32(loc)
-            value = ReadInt32(loc + 4)
+        If RInt32(loc + 8) = 1 Then
+            id = RInt32(loc)
+            value = RInt32(loc + 4)
 
             txtID.Text = id
 
-            txtValue.Text = math.Floor(value / (2 ^ 7))
+            txtValue.Text = Math.Floor(value / (2 ^ 7))
 
-            WriteInt32(loc + 8, 0)
+            WInt32(loc + 8, 0)
         End If
 
-        While dgvEvents.Rows.Count > nmbMaxFlags.Value 
+        While dgvEvents.Rows.Count > nmbMaxFlags.Value
             dgvEvents.Rows.Remove(dgvEvents.Rows(0))
         End While
 
-        refTimer.start
+        refTimer.Start()
     End Sub
 
-    
+
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Version = lblVer.Text
@@ -537,14 +489,14 @@ Public Class Form1
             If oldFileArg.EndsWith(".old") Then
                 Dim t = New Thread(
                     Sub()
-                    Try
-                        'Give the old version time to shut down
-                        Thread.Sleep(1000)
-                        File.Delete(oldFileArg)
-                    Catch ex As Exception
-                        Me.Invoke(Function() MsgBox("Deleting old version failed: " & vbCrLf & ex.Message, MsgBoxStyle.Exclamation))
-                    End Try
-                End Sub)
+                        Try
+                            'Give the old version time to shut down
+                            Thread.Sleep(1000)
+                            File.Delete(oldFileArg)
+                        Catch ex As Exception
+                            Me.Invoke(Function() MsgBox("Deleting old version failed: " & vbCrLf & ex.Message, MsgBoxStyle.Exclamation))
+                        End Try
+                    End Sub)
                 t.Start()
             Else
                 MsgBox("Deleting old version failed: Invalid filename ", MsgBoxStyle.Exclamation)
@@ -562,7 +514,7 @@ Public Class Form1
         dgvNames.Columns("id").ValueType = GetType(Integer)
         dgvNames.Columns("name").ValueType = GetType(String)
         dgvNames.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
-        For each column as DataGridViewColumn In dgvNames.columns
+        For Each column As DataGridViewColumn In dgvNames.Columns
             column.SortMode = DataGridViewColumnSortMode.NotSortable
         Next
 
@@ -571,7 +523,7 @@ Public Class Form1
 
         updatecheck()
     End Sub
-    Private sub initHooks()
+    Private Sub initHooks()
 
         rlsHooks.Add("geteventflagvalue", New IntPtr(&HD60340))
         rlsHooks.Add("hook1", New IntPtr(&HBC1CEA))
@@ -592,15 +544,15 @@ Public Class Form1
 
 
 
-    End sub
+    End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         Try
-            Dim names(dgvNames.Rows.Count - 2) as String
+            Dim names(dgvNames.Rows.Count - 2) As String
             dgvNames.Sort(dgvNames.Columns("id"), System.ComponentModel.ListSortDirection.Ascending)
 
             For i = 0 To dgvNames.Rows.Count - 2
-                names(i) = dgvNames.Rows(i).Cells("id").value & "|" & dgvNames.Rows(i).Cells("name").value
+                names(i) = dgvNames.Rows(i).Cells("id").Value & "|" & dgvNames.Rows(i).Cells("name").Value
             Next
             File.WriteAllLines("DS-EventHook-IDs.txt", names)
             MsgBox("Saved DS-EventHook-IDs.txt")
@@ -609,42 +561,42 @@ Public Class Form1
         End Try
     End Sub
     Private Sub btnLoad_Click(sender As Object, e As EventArgs) Handles btnLoad.Click
-        loadNames
+        loadNames()
     End Sub
-    Private sub loadNames()
+    Private Sub loadNames()
         Try
-            
-            dgvNames.Rows.Clear
+
+            dgvNames.Rows.Clear()
             Dim names() As String = {""}
             If File.Exists("DS-EventHook-IDs.txt") Then
                 names = File.ReadAllLines("DS-EventHook-IDs.txt")
             End If
 
             'Add IDs from TXT file
-            For each line In names
-                if line.Contains("|") Then
-                Dim id As integer = convert.ToInt32(line.Split("|")(0))
-                Dim name As String = line.Split("|")(1)
-                
-                dgvNames.Rows.Add({id, name})
+            For Each line In names
+                If line.Contains("|") Then
+                    Dim id As Integer = Convert.ToInt32(line.Split("|")(0))
+                    Dim name As String = line.Split("|")(1)
+
+                    dgvNames.Rows.Add({id, name})
                 End If
             Next
 
 
             'Merge but don't overwrite IDs I've found with IDs from TXT file
-            Dim defaultIDs() = My.Resources.NamedIDs.Split(Environment.newline)
-            For each defaultid In defaultIDs
+            Dim defaultIDs() = My.Resources.NamedIDs.Split(Environment.NewLine)
+            For Each defaultid In defaultIDs
                 If defaultid.Contains("|") Then
                     Dim exists = False
-                    Dim did As Integer = convert.toint32(defaultid.Split("|")(0))
+                    Dim did As Integer = Convert.ToInt32(defaultid.Split("|")(0))
                     Dim dname = defaultid.Split("|")(1)
-                    For each oldid In names
-                        If oldid.Contains("|") then
-                            Dim oid As integer = Convert.ToInt32(oldid.Split("|")(0))
-                            If did = oid Then exists = true
+                    For Each oldid In names
+                        If oldid.Contains("|") Then
+                            Dim oid As Integer = Convert.ToInt32(oldid.Split("|")(0))
+                            If did = oid Then exists = True
                         End If
                     Next
-                    If not exists Then dgvNames.Rows.Add({did, dname})
+                    If Not exists Then dgvNames.Rows.Add({did, dname})
                 End If
             Next
 
@@ -654,10 +606,10 @@ Public Class Form1
         Catch ex As Exception
             MsgBox("Error reading stored names." & Environment.NewLine & ex.Message)
         End Try
-    End sub
+    End Sub
 
-    Private Sub EventsNameChanged(sender As Object, e As System.Windows.Forms.DataGridViewcelleventargs) Handles dgvEvents.CellValueChanged
-        if e.ColumnIndex = (0) and dgvEvents.Rows.Count > 0 Then
+    Private Sub EventsNameChanged(sender As Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvEvents.CellValueChanged
+        If e.ColumnIndex = (0) And dgvEvents.Rows.Count > 0 Then
             Dim name As String
             Dim id As Integer
             Dim exists As Boolean = False
@@ -666,10 +618,10 @@ Public Class Form1
             name = dgvEvents.Rows(e.RowIndex).Cells("name").Value
             id = dgvEvents.Rows(e.RowIndex).Cells("id").Value
 
-            For each row  As DataGridViewRow In dgvNames.Rows
-                If row.cells("id").value = id Then
-                    row.cells("name").value = name
-                    exists = true
+            For Each row As DataGridViewRow In dgvNames.Rows
+                If row.Cells("id").Value = id Then
+                    row.Cells("name").Value = name
+                    exists = True
                 End If
             Next
 
@@ -680,25 +632,25 @@ Public Class Form1
         End If
 
     End Sub
-    Private sub IDSelected(sender as Object, e As DataGridViewCellEventArgs) Handles dgvNames.CellClick
+    Private Sub IDSelected(sender As Object, e As DataGridViewCellEventArgs) Handles dgvNames.CellClick
         If (dgvNames.Rows.Count > 0 And e.RowIndex > -1) Then
-            txtID.Text = dgvNames.Rows(e.RowIndex).Cells("id").value
+            txtID.Text = dgvNames.Rows(e.RowIndex).Cells("id").Value
         End If
-    End sub
+    End Sub
 
 
-    Private sub unhook()
-        isHooked = false
-        refTimer.Stop
+    Private Sub unhook()
+        isHooked = False
+        refTimer.Stop()
 
         VirtualFreeEx(_targetProcessHandle, hook1mem, 0, MEM_RELEASE)
         VirtualFreeEx(_targetProcessHandle, getflagfuncmem, 0, MEM_RELEASE)
         VirtualFreeEx(_targetProcessHandle, setflagfuncmem, 0, MEM_RELEASE)
 
-        Dim tmpbytes() as Byte = {}
+        Dim tmpbytes() As Byte = {}
 
         If exeVER = "Release" Then
-            tmpbytes = {&He8, &Hc1, &H6f, &H17, 0}
+            tmpbytes = {&HE8, &HC1, &H6F, &H17, 0}
             WriteProcessMemory(_targetProcessHandle, hooks("hook1"), tmpbytes, 5, 0)
 
             tmpbytes = {&HBA, 1, 0, 0, 0}
@@ -711,19 +663,19 @@ Public Class Form1
             tmpbytes = {&HBA, 1, 0, 0, 0}
             WriteProcessMemory(_targetProcessHandle, hooks("hook2"), tmpbytes, 5, 0)
         End If
-        
-    End sub
+
+    End Sub
     Private Sub btnUnhook_Click(sender As Object, e As EventArgs) Handles btnUnhook.Click
         unhook()
     End Sub
-    
+
     Private Sub btnGet_Click(sender As Object, e As EventArgs) Handles btnGet.Click
-        WriteInt32(getflagfuncmem + &H400, convert.ToInt32(txtID.text))
+        WInt32(getflagfuncmem + &H400, Convert.ToInt32(txtID.Text))
         CreateRemoteThread(_targetProcessHandle, 0, 0, getflagfuncmem, 0, 0, 0)
     End Sub
     Private Sub btnSet_Click(sender As Object, e As EventArgs) Handles btnSet.Click
-        WriteInt32(setflagfuncmem + &H400, convert.ToInt32(txtID.text))
-        WriteInt32(setflagfuncmem + &H404, convert.ToInt32(txtValue.text))
+        WInt32(setflagfuncmem + &H400, Convert.ToInt32(txtID.Text))
+        WInt32(setflagfuncmem + &H404, Convert.ToInt32(txtValue.Text))
         CreateRemoteThread(_targetProcessHandle, 0, 0, setflagfuncmem, 0, 0, 0)
     End Sub
 
