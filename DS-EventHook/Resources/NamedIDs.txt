@@ -265,8 +265,10 @@
 11025211|Firelink Shrine, Skeleton Stands Up
 11025212|Firelink Shrine, Skeleton Stands Up
 11025213|Firelink Shrine, Skeleton Stands Up
+11100531|Painted World, Priscilla Disabled
 11200592|Alvina, Gift Cat Covenant Ring
 11200900|Boss Defeated, Moonlight Butterfly
+11205383|Moonlight Butterfly, Travel to Fight
 11210000|Boss Defeated, Sanctuary Guardian
 11210001|Boss Defeated, Artorias
 11210002|Boss Defeated, Manus
@@ -523,3 +525,4 @@
 11810590|Oscar, Gift Estus Flask
 11810591|Oscar, Gift Undead Asylum F2 East Key
 50000081|Oscar, Don't gift Big Pilgrim Key
+51410180|Ceaseless Discharge, Corpse Looted
