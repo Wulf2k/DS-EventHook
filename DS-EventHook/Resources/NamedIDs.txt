@@ -219,6 +219,8 @@
 11000111|Depths, Door to Blighttown
 11000120|Depths, Bonfire door opened
 11000600|Depths, Large Ember chest opened
+11000853|Dead, Depths, Channeler
+11010000|Bell Gargoyles, Initial Boff Fight Cinematic Viewed
 11010090|Undead Burg, Fog Gate
 11010100|Undead Burg, Shortcut Ladder
 11010101|Undead Burg, Gate to Female Merchant
@@ -244,6 +246,8 @@
 11010901|Boss Defeated, Taurus Demon
 11010902|Boss Defeated, Capra Demon
 11015031|Pray at the Altar of Sunlight
+11015390|Bell Gargoyles, Boss Fog Entered
+11015393|Bell Gargoyles, Boss Area Entered
 11020302|Undead Parish, Elevator to Firelink
 11020575|Laurentius, Knows About Quelana
 11020599|Petrus, Gifts Copper Coin
@@ -436,6 +440,10 @@
 11400856|Dead, Blighttown, Blowdart Sniper
 11400857|Dead, Blighttown, Blowdart Sniper
 11400858|Dead, Blighttown, Blowdart Sniper
+11410000|Bed of Chaos, Both Orbs Destroyed
+11410200|Bed of Chaos, Center Platform Collapsed
+11410291|Bed of Chaos, Left Orb Destroyed
+11410292|Bed of Chaos, Right Orb Destroyed
 11410340|Lost Izalith, Shortcut to Demon Ruins
 11410401|Demon Ruins, Elevator to Quelaag's Domain
 11410410|Boss Defeated, Demon Firesage
@@ -443,8 +451,14 @@
 11410801|Demon Ruins, Lava Drained
 11410900|Boss Defeated, Ceaseless Discharge
 11410901|Boss Defeated, Centipede Demon
-11500091|Sen's Fortress, Pre-Bonfire fog gate
-11500100|Sen's Fortress, exited Cage Elevator
+11415310|Ceaseless Discharge, Hanging, Hit Once
+11415311|Ceaseless Discharge, Hanging, Hit Twice
+11415312|Ceaseless Discharge, Hanging, Hit Thrice
+11415313|Ceaseless Discharge, Hanging, Hit Four Times
+11415314|Ceaseless Discharge, Hanging, Hit Five Times
+11415379|Ceaseless Discharge, Dropped Into Pit
+11500091|Sen's Fortress, Pre-Bonfire Fog Gate
+11500100|Sen's Fortress, Exited Cage Elevator
 11500101|Sen's Fortress, Cage Elevator
 11500102|Sen's Fortress, Cage Elevator open
 11500110|Sen's Fortress, Empty Cage #2 open
@@ -493,6 +507,7 @@
 11510220|Anor Londo, Elevator active
 11510251|Anor Londo, Shortcut Door to Solaire Bonfire
 11510272|Dark Anor Londo
+11510523|Dark Sun Gwyndolin, Disabled
 11510615|Anor Londo, Empty chest opened
 11510616|Anor Londo, Brass set chest opened
 11510617|Anor Londo, Twinkling Titanite chest opened
@@ -508,12 +523,15 @@
 11600592|Obtained, Key to the Seal
 11600650|New Londo, Transient Curse-carrying Corpse Collapsed
 11605123|Valley of Drakes, Elevator to Darkroot Inoperable
+11700000|Seath, Initial Boss Fight Cinematic Viewed
 11700120|Duke's Archives, Bookshelf Door
 11700300|Duke's Archives, Archive Tower Cell Door
 11700306|Duke's Archives, Archive Tower Giant Cell?
 11700320|Duke's Archives, Archive Tower Giant Cell?
 11700822|Duke's Archives, Crying Pisaca 1
 11700823|Duke's Archives, Crying Pisaca 2
+11705396|Seath, Crystal Broken
+11705397|Seath, Tail Cut
 11810090|Undead Asylum, Pre-Oscar Fog Gate
 11810103|Undead Asylum, Cell Door
 11810104|Undead Asylum, F2 West Door
@@ -524,5 +542,7 @@
 11810211|Undead Asylum, Trap Sprung Near Oscar
 11810590|Oscar, Gift Estus Flask
 11810591|Oscar, Gift Undead Asylum F2 East Key
+11810900|Undead Asylum, Tutorial Complete
+11815395|Asylum Demon, At Lower Position
 50000081|Oscar, Don't gift Big Pilgrim Key
 51410180|Ceaseless Discharge, Corpse Looted
