@@ -191,6 +191,8 @@
 1650|? In Firelink?
 1671|Kaathe, Appears?
 1677|Kaathe, Disapproves and Leaves
+1691|Priscilla, Hostile
+1692|Priscilla, Dead
 1700|Oswald, Starting Location
 1701|Oswald, Hostile
 1702|Oswald, Dead
