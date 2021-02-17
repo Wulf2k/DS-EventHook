@@ -458,7 +458,7 @@
 11415312|Ceaseless Discharge, Hanging, Hit Thrice
 11415313|Ceaseless Discharge, Hanging, Hit Four Times
 11415314|Ceaseless Discharge, Hanging, Hit Five Times
-11415379|Ceaseless Discharge, Dropped Into Pit
+11415379|Ceaseless Discharge, Dying
 11500091|Sen's Fortress, Pre-Bonfire Fog Gate
 11500100|Sen's Fortress, Exited Cage Elevator
 11500101|Sen's Fortress, Cage Elevator
